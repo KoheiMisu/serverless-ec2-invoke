@@ -31,10 +31,10 @@ functions:
   ec2-start:
     handler: ec2-start.startHandler
     events:
-      # 毎月1日の1時に実行(UTC?)
-     - schedule: cron(0 1 1 * ? *)
+      # 毎月1日の1時に実行(UTCなので -9hで設定)
+     - schedule: cron(00 3 9 * ? *)
   ec2-halt:
     handler: ec2-halt.haltHandler
     events:
-      # 毎月2日の23時に実行(UTC?)
-      - schedule: cron(0 23 2 * ? *)
+      # 毎月2日の23時に実行(UTCなので -9hで設定)
+      - schedule: cron(10 3 9 * ? *)
